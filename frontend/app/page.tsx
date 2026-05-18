@@ -196,23 +196,25 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.34}>
-            <Card className="p-7">
-              <p className="text-xs uppercase tracking-[0.24em] text-sage-700/72">
+            <Card className="p-7 dark:border-sage-600/70 dark:bg-[#1d2827]">
+              <p className="text-xs uppercase tracking-[0.24em] text-sage-700/72 dark:text-sand-50/86">
                 Beginning Experience
               </p>
-              <h2 className="mt-4 font-serif-display text-3xl text-ink">
+              <h2 className="mt-4 font-serif-display text-3xl text-ink dark:text-sand-50">
                 The first five questions a user sees
               </h2>
               <div className="mt-6 grid gap-3">
                 {intakePreview.map((question, index) => (
                   <div
                     key={question}
-                    className="rounded-[1.5rem] border border-sage-100 bg-sage-50/65 px-4 py-4"
+                    className="rounded-[1.5rem] border border-sage-100 bg-sage-50/65 px-4 py-4 dark:border-sage-600/65 dark:bg-[#2a3736]"
                   >
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sage-700/58">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sage-700/58 dark:text-sand-50/88">
                       Q{index + 1}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-sage-900/84">{question}</p>
+                    <p className="mt-2 text-sm leading-6 text-sage-900/84 dark:text-white">
+                      {question}
+                    </p>
                   </div>
                 ))}
               </div>
