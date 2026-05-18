@@ -6,7 +6,9 @@ import { cn } from "@/lib/utils";
 import type { Message } from "@/lib/types";
 
 type ChatThreadProps = {
-  messages?: { id: string; role: string; text?: string; content?: string }[] | Message[];
+  messages?:
+    | readonly { id: string; role: string; text?: string; content?: string }[]
+    | readonly Message[];
 };
 
 function getAssistantSegmentMeta(segment: string, index: number, total: number) {

@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
 
 import { AuthProvider } from "@/components/providers/auth-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
 import "./globals.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces"
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope"
-});
 
 export const metadata: Metadata = {
   title: "Safebond",
@@ -29,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fraunces.variable} ${manrope.variable} font-sans-body antialiased`}>
+      <body className="font-sans-body antialiased">
         <ThemeProvider>
           <AuthProvider>{children}</AuthProvider>
         </ThemeProvider>
