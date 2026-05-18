@@ -30,10 +30,10 @@ body {
 
 .dark body {
   background:
-    radial-gradient(circle at 0% 0%, rgba(62, 89, 82, 0.5), transparent 26%),
-    radial-gradient(circle at 100% 10%, rgba(127, 43, 33, 0.22), transparent 18%),
-    linear-gradient(180deg, #0f1616 0%, #132020 38%, #1b2524 100%);
-  color: #edf3ef;
+    radial-gradient(circle at 0% 0%, rgba(78, 116, 106, 0.42), transparent 28%),
+    radial-gradient(circle at 100% 10%, rgba(146, 61, 49, 0.18), transparent 20%),
+    linear-gradient(180deg, #111919 0%, #162221 42%, #202b2a 100%);
+  color: #f3f7f3;
 }
 
 body::before {
@@ -50,8 +50,8 @@ body::before {
 
 .dark body::before {
   background-image:
-    linear-gradient(rgba(190, 214, 200, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(190, 214, 200, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(218, 230, 223, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 230, 223, 0.06) 1px, transparent 1px);
 }
 
 @layer base {

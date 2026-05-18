@@ -22,10 +22,10 @@ export function EmotionPulse({ items = emotionPulse }: EmotionPulseProps) {
       {items.map((item) => (
         <div key={item.label} className="space-y-2">
           <div className="flex items-center justify-between text-sm">
-            <span className="text-sage-900/80">{item.label}</span>
-            <span className="font-semibold text-ink">{item.value}%</span>
+            <span className="text-sage-900/80 dark:text-sand-50/88">{item.label}</span>
+            <span className="font-semibold text-ink dark:text-sand-50">{item.value}%</span>
           </div>
-          <div className="h-3 rounded-full bg-sage-100">
+          <div className="h-3 rounded-full bg-sage-100 dark:bg-sage-900/90">
             <div
               className={`h-3 rounded-full bg-gradient-to-r ${
                 palette[item.label.toLowerCase()] ?? "from-sage-600 via-sage-400 to-sand-300"

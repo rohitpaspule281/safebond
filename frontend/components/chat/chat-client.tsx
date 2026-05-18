@@ -367,11 +367,11 @@ export function ChatClient() {
 
         {runtimePending && runtimePending.length > 0 ? (
           <FadeIn delay={0.04}>
-            <Card className="border-sand-200 bg-sand-50/80 p-5 dark:border-sand-900/40 dark:bg-sand-950/20">
+            <Card className="border-sand-200 bg-sand-50/80 p-5 dark:border-sand-800/60 dark:bg-sand-950/35">
               <p className="text-sm font-semibold text-sand-900 dark:text-sand-50">
                 Local AI models are still warming up.
               </p>
-              <p className="mt-2 text-sm leading-6 text-sage-800/80 dark:text-sand-50/72">
+              <p className="mt-2 text-sm leading-6 text-sage-800/80 dark:text-sand-50/86">
                 Safebond is downloading or initializing the safety, emotion, and memory models in
                 the background. The first live reply can take longer on a student laptop, but
                 later replies should be much faster.
@@ -384,13 +384,13 @@ export function ChatClient() {
           <Card className="sticky top-4 z-10 overflow-hidden p-6 dark:border-sage-800/70 dark:bg-sage-950/75">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sage-700/60 dark:text-sand-50/48">
+                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sage-700/60 dark:text-sand-50/72">
                   Today’s support plan
                 </p>
                 <h3 className="mt-2 font-serif-display text-2xl text-ink dark:text-sand-50">
                   {latestResponse?.response_strategy.label ?? "Support mode will appear after your next reflection"}
                 </h3>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-sage-800/76 dark:text-sand-50/72">
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-sage-800/76 dark:text-sand-50/86">
                   {latestResponse?.response_strategy.rationale ??
                     "Safebond will pin your current support mode here, then surface a few practical companion cards to help you act on it."}
                 </p>
@@ -405,7 +405,7 @@ export function ChatClient() {
                 return (
                   <div
                     key={card.title}
-                    className={`rounded-[1.7rem] border border-white/70 bg-gradient-to-br ${card.tone} p-4 shadow-soft dark:border-sage-800/70`}
+                    className={`rounded-[1.7rem] border border-white/70 bg-gradient-to-br ${card.tone} p-4 shadow-soft dark:border-sage-700/70`}
                   >
                     <div className="flex items-center gap-3">
                       <div className="rounded-2xl bg-white/80 p-2 text-sage-800 shadow-soft dark:bg-sage-900 dark:text-sand-50">
@@ -413,7 +413,7 @@ export function ChatClient() {
                       </div>
                       <p className="text-sm font-semibold text-ink dark:text-sand-50">{card.title}</p>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-sage-900/78 dark:text-sand-50/76">
+                    <p className="mt-3 text-sm leading-6 text-sage-900/78 dark:text-sand-50/88">
                       {card.body}
                     </p>
                   </div>
@@ -427,7 +427,7 @@ export function ChatClient() {
           <Card className="overflow-hidden p-6 dark:border-sage-800/70 dark:bg-sage-950/75">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sage-700/60 dark:text-sand-50/48">
+                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sage-700/60 dark:text-sand-50/72">
                   Seen over time
                 </p>
                 <h3 className="mt-2 font-serif-display text-2xl text-ink dark:text-sand-50">
@@ -450,19 +450,19 @@ export function ChatClient() {
                     <span className="mr-2">{item.emoji}</span>
                     {item.label}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-sage-900/76 dark:text-sand-50/74">
+                  <p className="mt-3 text-sm leading-6 text-sage-900/76 dark:text-sand-50/86">
                     {item.value}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 rounded-[1.8rem] border border-sage-100 bg-sage-50/65 p-4 dark:border-sage-800 dark:bg-sage-900/55">
+            <div className="mt-5 rounded-[1.8rem] border border-sage-100 bg-sage-50/65 p-4 dark:border-sage-700/70 dark:bg-sage-900/78">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-sm font-semibold text-ink dark:text-sand-50">
                   Mood pulse over recent days
                 </p>
-                <p className="text-xs uppercase tracking-[0.22em] text-sage-700/60 dark:text-sand-50/45">
+                <p className="text-xs uppercase tracking-[0.22em] text-sage-700/60 dark:text-sand-50/72">
                   calm vs stress
                 </p>
               </div>
@@ -470,7 +470,7 @@ export function ChatClient() {
                 {progressTrend.length
                   ? progressTrend.map((point) => (
                       <div key={point.day} className="space-y-2 text-center">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-700/58 dark:text-sand-50/48">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-700/58 dark:text-sand-50/72">
                           {point.day}
                         </p>
                         <div className="flex h-24 items-end justify-center gap-1 rounded-2xl bg-white/75 px-3 py-2 dark:bg-sage-950/70">
@@ -483,21 +483,21 @@ export function ChatClient() {
                             style={{ height: `${Math.max(point.stress, 10)}%` }}
                           />
                         </div>
-                        <p className="text-[11px] text-sage-800/68 dark:text-sand-50/58">
+                        <p className="text-[11px] text-sage-800/68 dark:text-sand-50/76">
                           {point.calm >= point.stress ? "🙂 calmer" : "🌀 stressed"}
                         </p>
                       </div>
                     ))
                   : Array.from({ length: 5 }).map((_, index) => (
                       <div key={index} className="space-y-2 text-center">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-700/58 dark:text-sand-50/48">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-700/58 dark:text-sand-50/72">
                           Day {index + 1}
                         </p>
                         <div className="flex h-24 items-end justify-center gap-1 rounded-2xl bg-white/75 px-3 py-2 dark:bg-sage-950/70">
                           <div className="h-8 w-3 rounded-full bg-sage-200 dark:bg-sage-800" />
                           <div className="h-10 w-3 rounded-full bg-coral-200 dark:bg-coral-900/70" />
                         </div>
-                        <p className="text-[11px] text-sage-800/68 dark:text-sand-50/58">waiting</p>
+                        <p className="text-[11px] text-sage-800/68 dark:text-sand-50/76">waiting</p>
                       </div>
                     ))}
               </div>
@@ -518,7 +518,7 @@ export function ChatClient() {
                       : "bg-gradient-to-br from-coral-50 via-white to-sand-50 dark:from-coral-950/20 dark:via-sage-950 dark:to-sand-950/20"
                 }`}
               >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-sage-700/58 dark:text-sand-50/46">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-sage-700/58 dark:text-sand-50/72">
                   {tag.label}
                 </p>
                 <p className="mt-2 font-serif-display text-2xl text-ink dark:text-sand-50">
@@ -531,10 +531,10 @@ export function ChatClient() {
 
         <FadeIn delay={0.13}>
           <Card className="p-4 dark:border-sage-800/70 dark:bg-sage-950/75">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-sage-700/58 dark:text-sand-50/46">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-sage-700/58 dark:text-sand-50/72">
               Why this response
             </p>
-            <p className="mt-2 text-sm leading-6 text-sage-900/78 dark:text-sand-50/74">
+            <p className="mt-2 text-sm leading-6 text-sage-900/78 dark:text-sand-50/86">
               {explainabilityStrip}
             </p>
           </Card>
@@ -544,7 +544,7 @@ export function ChatClient() {
           <Card className="p-6">
             {error ? <p className="mb-4 text-sm text-coral-700 dark:text-coral-200">{error}</p> : null}
             {loadingConversation ? (
-              <p className="mb-4 text-sm text-sage-800/72 dark:text-sand-50/70">Loading your conversation history...</p>
+              <p className="mb-4 text-sm text-sage-800/72 dark:text-sand-50/82">Loading your conversation history...</p>
             ) : null}
             <ChatThread messages={messages} />
           </Card>
@@ -564,7 +564,7 @@ export function ChatClient() {
               </div>
               <div>
                 <h3 className="font-serif-display text-2xl text-ink dark:text-sand-50">Emotion panel</h3>
-                <p className="text-sm text-sage-800/72 dark:text-sand-50/68">
+                <p className="text-sm text-sage-800/72 dark:text-sand-50/82">
                   Current live outputs from the emotion and safety stack
                 </p>
               </div>
@@ -583,7 +583,7 @@ export function ChatClient() {
               </div>
               <div>
                 <h3 className="font-serif-display text-2xl text-ink dark:text-sand-50">Retrieved memory</h3>
-                <p className="text-sm text-sage-800/72 dark:text-sand-50/68">
+                <p className="text-sm text-sage-800/72 dark:text-sand-50/82">
                   Context injected by the backend RAG layer
                 </p>
               </div>
@@ -652,14 +652,14 @@ export function ChatClient() {
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <Card className="border-coral-100 bg-gradient-to-br from-coral-50 via-white to-sand-50 p-6 dark:border-coral-950/40 dark:from-sage-950 dark:via-sage-900/80 dark:to-sand-950/20">
+          <Card className="border-coral-100 bg-gradient-to-br from-coral-50 via-white to-sand-50 p-6 dark:border-coral-900/40 dark:from-sage-950 dark:via-sage-900/88 dark:to-sand-950/32">
             <div className="flex items-center gap-3">
               <div className="rounded-2xl bg-coral-100 p-3 text-coral-700 dark:bg-coral-950/50 dark:text-coral-100">
                 <ShieldAlert className="h-4 w-4" />
               </div>
               <div>
                 <h3 className="font-serif-display text-2xl text-ink dark:text-sand-50">Trusted support plan</h3>
-                <p className="text-sm text-sage-800/72 dark:text-sand-50/68">
+                <p className="text-sm text-sage-800/72 dark:text-sand-50/82">
                   Consent-based outreach appears here only when Safebond sees elevated risk.
                 </p>
               </div>
@@ -670,18 +670,18 @@ export function ChatClient() {
                 {trustedContactOptions.map((contact) => (
                   <div
                     key={contact.contact_id}
-                    className="rounded-[1.5rem] border border-coral-100 bg-white/80 p-4 dark:border-coral-950/40 dark:bg-sage-950/70"
+                    className="rounded-[1.5rem] border border-coral-100 bg-white/80 p-4 dark:border-coral-900/40 dark:bg-[#182323]/90"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <div>
                         <p className="text-lg font-semibold text-ink dark:text-sand-50">{contact.name}</p>
-                        <p className="text-sm text-sage-800/72 dark:text-sand-50/68">{contact.relationship_to_user}</p>
+                        <p className="text-sm text-sage-800/72 dark:text-sand-50/82">{contact.relationship_to_user}</p>
                       </div>
                       <span className="rounded-full bg-coral-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-coral-700 dark:bg-coral-950/50 dark:text-coral-100">
                         high-support prompt
                       </span>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-sage-800/82 dark:text-sand-50/76">{contact.why_now}</p>
+                    <p className="mt-3 text-sm leading-6 text-sage-800/82 dark:text-sand-50/86">{contact.why_now}</p>
                     <div className="mt-4 flex flex-wrap gap-3">
                       {contact.phone_number && contact.sms_message ? (
                         <a
@@ -715,14 +715,14 @@ export function ChatClient() {
                 ))}
               </div>
             ) : (
-              <div className="mt-6 rounded-[1.5rem] border border-dashed border-sage-200 bg-white/70 p-4 text-sm leading-6 text-sage-800/76 dark:border-sage-800 dark:bg-sage-900/40 dark:text-sand-50/72">
+              <div className="mt-6 rounded-[1.5rem] border border-dashed border-sage-200 bg-white/70 p-4 text-sm leading-6 text-sage-800/76 dark:border-sage-700/70 dark:bg-sage-900/72 dark:text-sand-50/84">
                 Safebond will surface trusted-contact actions here when a conversation reaches a
                 higher-risk threshold and the user has enabled contact reminders during onboarding.
               </div>
             )}
 
             {emergencyResources.length ? (
-              <div className="mt-5 space-y-3 rounded-[1.5rem] border border-coral-100 bg-white/80 p-4 dark:border-coral-950/40 dark:bg-sage-950/70">
+              <div className="mt-5 space-y-3 rounded-[1.5rem] border border-coral-100 bg-white/80 p-4 dark:border-coral-900/40 dark:bg-[#182323]/90">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-coral-700 dark:text-coral-100">
                   Crisis resources
                 </p>
@@ -730,11 +730,11 @@ export function ChatClient() {
                   {emergencyResources.map((resource) => (
                     <div
                       key={`${resource.name}-${resource.contact}`}
-                      className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-coral-50/60 px-4 py-3 dark:bg-coral-950/20"
+                      className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-coral-50/60 px-4 py-3 dark:bg-coral-950/32"
                     >
                       <div>
                         <p className="font-semibold text-ink dark:text-sand-50">{resource.name}</p>
-                        <p className="text-sm text-sage-800/72 dark:text-sand-50/68">{resource.availability}</p>
+                        <p className="text-sm text-sage-800/72 dark:text-sand-50/82">{resource.availability}</p>
                       </div>
                       <a
                         href={`tel:${resource.contact}`}

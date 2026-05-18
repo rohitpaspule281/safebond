@@ -35,7 +35,7 @@ function getAssistantSegmentMeta(segment: string, index: number, total: number) 
       title: "🧭 Try this",
       icon: Compass,
       wrapperClass:
-        "border-sand-200/90 bg-gradient-to-br from-white via-sand-50/80 to-coral-50/50 dark:border-sand-800/80 dark:from-sage-950 dark:via-sand-950/40 dark:to-coral-950/20",
+        "border-sand-200/90 bg-gradient-to-br from-white via-sand-50/80 to-coral-50/50 dark:border-sand-800/80 dark:from-sage-950 dark:via-sand-950/55 dark:to-coral-950/35",
       iconClass: "bg-sand-100 text-sand-900 dark:bg-sand-900 dark:text-sand-50"
     };
   }
@@ -45,7 +45,7 @@ function getAssistantSegmentMeta(segment: string, index: number, total: number) 
       title: "💬 Let’s keep going",
       icon: ArrowRightCircle,
       wrapperClass:
-        "border-coral-200/90 bg-gradient-to-br from-white via-coral-50/65 to-sand-50/40 dark:border-coral-900/70 dark:from-sage-950 dark:via-coral-950/25 dark:to-sand-950/30",
+        "border-coral-200/90 bg-gradient-to-br from-white via-coral-50/65 to-sand-50/40 dark:border-coral-900/70 dark:from-sage-950 dark:via-coral-950/35 dark:to-sand-950/38",
       iconClass: "bg-coral-100 text-coral-700 dark:bg-coral-900/80 dark:text-coral-100"
     };
   }
@@ -62,7 +62,7 @@ function getAssistantSegmentMeta(segment: string, index: number, total: number) 
 export function ChatThread({ messages = chatMessages }: ChatThreadProps) {
   if (messages.length === 0) {
     return (
-      <div className="rounded-[2rem] border border-dashed border-sage-200 bg-sage-50/50 p-8 text-sm leading-7 text-sage-800/78">
+      <div className="rounded-[2rem] border border-dashed border-sage-200 bg-sage-50/50 p-8 text-sm leading-7 text-sage-800/78 dark:border-sage-700/70 dark:bg-sage-900/70 dark:text-sand-50/86">
         Start with one short reflection. Safebond will analyze the emotional signal, check safety,
         store memory, and reply with context-aware support.
       </div>
@@ -89,7 +89,7 @@ export function ChatThread({ messages = chatMessages }: ChatThreadProps) {
               className={cn("max-w-3xl transition-opacity", message.id.startsWith("pending-") && "opacity-80")}
             >
               <div className="mb-3 flex items-center gap-3 px-2">
-                <div className="rounded-full bg-sage-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-900/72 dark:bg-sage-900 dark:text-sand-50/82">
+                <div className="rounded-full bg-sage-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-900/72 dark:bg-sage-900 dark:text-sand-50/92">
                   Safebond
                 </div>
                 <div className="h-px flex-1 bg-gradient-to-r from-sage-200 via-sage-100 to-transparent dark:from-sage-800 dark:via-sage-900" />
@@ -125,7 +125,7 @@ export function ChatThread({ messages = chatMessages }: ChatThreadProps) {
                           >
                             <Icon className="h-4 w-4" />
                           </div>
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sage-900/60 dark:text-sand-50/56">
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sage-900/60 dark:text-sand-50/74">
                             {meta.title}
                           </p>
                         </div>

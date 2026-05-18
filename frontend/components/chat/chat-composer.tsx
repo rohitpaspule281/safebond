@@ -27,10 +27,10 @@ export function ChatComposer({ onSend, sending = false }: ChatComposerProps) {
   };
 
   return (
-    <div className="rounded-[2rem] border border-white/60 bg-white/85 p-4 shadow-soft backdrop-blur-xl dark:border-sage-800/70 dark:bg-sage-950/78">
+    <div className="rounded-[2rem] border border-white/60 bg-white/85 p-4 shadow-soft backdrop-blur-xl dark:border-sage-700/70 dark:bg-[#182323]/94">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end">
         <textarea
-          className="min-h-[110px] flex-1 resize-none rounded-[1.5rem] border border-sage-100 bg-sage-50/50 px-4 py-4 text-sm text-ink outline-none placeholder:text-sage-600/55 dark:border-sage-800 dark:bg-sage-900/70 dark:text-sand-50 dark:placeholder:text-sand-50/40"
+          className="min-h-[110px] flex-1 resize-none rounded-[1.5rem] border border-sage-100 bg-sage-50/50 px-4 py-4 text-sm text-ink outline-none placeholder:text-sage-600/55 dark:border-sage-700 dark:bg-sage-900/92 dark:text-sand-50 dark:placeholder:text-sand-50/62"
           placeholder="Describe what you’re feeling. Safebond can combine recent emotional context, memory recall, and safety-aware support."
           value={value}
           disabled={sending}
@@ -63,7 +63,7 @@ export function ChatComposer({ onSend, sending = false }: ChatComposerProps) {
           </button>
         </div>
       </div>
-      <p className="mt-3 text-xs text-sage-700/70 dark:text-sand-50/55">
+      <p className="mt-3 text-xs text-sage-700/70 dark:text-sand-50/74">
         Press <span className="font-semibold text-sage-900 dark:text-sand-50">Enter</span> to send and{" "}
         <span className="font-semibold text-sage-900 dark:text-sand-50">Shift + Enter</span> for a new line.
       </p>
