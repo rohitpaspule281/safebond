@@ -1,0 +1,1 @@
+"""Safebond backend application package."""
