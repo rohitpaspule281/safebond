@@ -11,8 +11,24 @@ import {
   WellnessProfileStatus
 } from "@/lib/types";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api/v1";
+const PRODUCTION_API_BASE_URL = "https://safebond-backend.onrender.com/api/v1";
+const DEVELOPMENT_API_BASE_URL = "http://localhost:8000/api/v1";
+
+function resolveApiBaseUrl() {
+  const configured = process.env.NEXT_PUBLIC_API_BASE_URL?.trim();
+  if (configured) {
+    if (configured.startsWith("ttps://")) {
+      return `h${configured}`;
+    }
+    return configured;
+  }
+
+  return process.env.NODE_ENV === "production"
+    ? PRODUCTION_API_BASE_URL
+    : DEVELOPMENT_API_BASE_URL;
+}
+
+const API_BASE_URL = resolveApiBaseUrl();
 
 type RequestOptions = {
   method?: string;
