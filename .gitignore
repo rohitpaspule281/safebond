@@ -28,6 +28,8 @@ chroma/
 artifacts/
 logs/
 models/
+!backend/app/db/models/
+!backend/app/db/models/*.py
 
 # Build
 build/
